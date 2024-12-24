@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Error</title>
+</head>
+<body>
+  <div id="myDiv">
+    <p>This is some text.</p>
+  </div>
+
+  <script>
+    // Incorrect way to access the text content of a div using innerText directly 
+    let divText = document.getElementById("myDiv").innerText;  
+    console.log(divText); // Outputs: This is some text.
+
+    //Correct way to access text content (innerText is limited in scope)
+    let divTextContent = document.getElementById('myDiv').textContent; 
+    console.log(divTextContent); // Outputs: This is some text.
+
+    //If you need text content including HTML tags, use innerHTML
+    let divInnerHTML = document.getElementById('myDiv').innerHTML;
+    console.log(divInnerHTML); //Outputs: <p>This is some text.</p>
+  </script>
+</body>
+</html>
